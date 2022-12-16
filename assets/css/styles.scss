@@ -17,6 +17,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Literata Book';
+    src: url('../fonts/literatabook-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/literatabook-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
 body {
   width: 100%;
   height: 100vh;
@@ -28,12 +37,12 @@ body {
 .aree {
   .card-title {
     color: white;
-    font-family: Georgia, serif;
+    font-family: 'Literata Book', serif;
     padding: 0.25rem 0.75rem;
   }
   h1.card-title {
     font-size: 4rem;
-    margin-bottom: -0.5rem;
+    margin-bottom: -0.25rem;
   }
   .card-body {
     background: white;
