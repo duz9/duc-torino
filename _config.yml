@@ -36,6 +36,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+include: ["_pages"]
+
 sass:
   sass_dir: assets/css
   style: compressed
