@@ -1,10 +1,10 @@
 <header class="my-3">
-  <div class="container">
+  <div class="container-fluid">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <img href="index.html" src="{{site.baseurl}}/assets/img/DUC_Torino_logo_digital.jpg" class="img-fluid w-25" alt="...">
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         {% for item in site.data.navbar %}
-        <li><a href="{{ item.link }}" class="nav-link px-3 link-secondary fs-5"> {{ item.name }}</a></li>
+        <li><a href="{{ item.link }}" class="nav-link px-3 link-secondary fs-5">{{ item.name }}</a></li>
         {% endfor %}
       </ul>
     </div>
