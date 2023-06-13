@@ -1,0 +1,1143 @@
+{
+  "version": 8,
+  "name": "Torino",
+  "metadata": {"mapbox:autocomposite": true, "maputnik:renderer": "mbgljs"},
+  "center": [7.6782, 45.0644],
+    "light": {
+    "anchor": "viewport",
+    "color": "#F5F5F5",
+    "intensity": 0.25
+  },
+  "sources": {
+    "torino": {
+      "type": "vector",
+      "tiles": ["https://erds.ithacaweb.org/torino-data6/{z}/{x}/{y}.pbf"],
+      "minzoom": 12,
+      "maxZoom": 22
+    }
+  },
+  "transition": {
+    "duration": 300,
+    "delay": 0
+  },
+  "sprite": "https://openmaptiles.github.io/osm-liberty-gl-style/sprites/osm-liberty",
+  "glyphs": "https://erds.ithacaweb.org/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "torino_10k_buildings",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "torino_10k_a",
+      "maxzoom": 15,
+      "filter": ["all", ["==", "Layer", "ISOLATI"]],
+      "paint": {"fill-color": "#F5F5F5", "fill-outline-color": "#e6e6e9"}
+    },
+    {
+      "id": "torino_10k_parks",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "torino_10k_a",
+      "maxzoom": 15,
+      "filter": ["all", ["==", "Layer", "PARCHI"]],
+      "paint": {"fill-color": "#D0EFB1"}
+    },
+    {
+      "id": "torino_10k_waterways",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "torino_10k_a",
+      "maxzoom": 15,
+      "filter": ["all", ["==", "Layer", "FIUMI"]],
+      "paint": {"fill-color": "#A3CBF2"}
+    },
+    {
+      "id": "background",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "boundary_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#ECE4E4"}
+    },
+    {
+      "id": "landcover",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "landcover_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#FAF9EA"}
+    },
+    {
+      "id": "landuse",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "landuse_a",
+      "filter": ["all", ["!=", "type", "cemetery"]],
+      "minzoom": 15,
+      "paint": {"fill-color": "#FDCDB4", "fill-outline-color": "#FDCDB4"}
+    },
+    {
+      "id": "isolati",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "torino_10k_a",
+      "minzoom": 15,
+      "filter": ["all", ["==", "Layer", "ISOLATI"]],
+      "paint": {"fill-color": "#F9F9E3", "fill-opacity":0.7}
+    },
+    {
+      "id": "bareground",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "natural_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#37BF31", "fill-opacity":0.5}
+    },
+        {
+      "id": "roads_a",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "roads_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#FFFFFF", "fill-outline-color": "#A9A9A9"}
+    },
+    {
+      "id": "spartitraffico",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "transport_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#D5FCBB"}
+    },
+    {
+      "id": "lanes_a",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "highway_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#F4F4F4", "fill-outline-color": "#D5D5D5"}
+    },
+    {
+      "id": "cultivated",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "cultivated_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#EFF7CF"}
+    },
+    {
+      "id": "uncultivated",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "uncultivated_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#F4E9CD"}
+    },
+    {
+      "id": "cemetery_a",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "landuse_a",
+      "filter": ["all", ["==", "type", "cemetery"]],
+      "minzoom": 15,
+      "paint": {"fill-color": "#D0EFB1"}
+    },
+    {
+      "id": "dumpfill",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "dumpfill_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#ded4db", "fill-outline-color": "#ded4db"}
+    },
+    {
+      "id": "wood",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "wood_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#B3D89C"}
+    },
+    {
+      "id": "parks",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "parks_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#D0EFB1"}
+    },
+    {
+      "id": "drainage",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "drainage_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#A3CBF2"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "water_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#A3CBF2"}
+    },
+    {
+      "id": "waterway",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "waterway_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#A3CBF2"}
+    },
+    {
+      "id": "reservoir",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "reservoir_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#87bbee"}
+    },
+    {
+      "id": "museum-area",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "museum_a",
+      "minzoom": 13,
+      "paint": {"fill-color": "#D1CBCB", "fill-outline-color": "#D1CBCB"}
+    },
+    {
+      "id": "hospital-area",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "hospital_a",
+      "minzoom": 13,
+      "paint": {"fill-color": "#FFE6E5", "fill-outline-color": "#FFE6E5"}
+    },
+    {
+      "id": "quay",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "quay_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#FFFFFF", "fill-outline-color": "#e6e6e9"}
+    },
+    {
+      "id": "railway_a",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "railway_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#F3F3F3"}
+    },
+    {
+      "id": "bridge_a",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "bridge_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#FFFFFF", "fill-outline-color": "#e6e6e9"}
+    },
+    {
+      "id": "bridge-pylon",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "bridge-pylon_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#e6e6e9", "fill-outline-color": "#d6d6db"}
+    },
+    {
+      "id": "footway",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "footway_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#FCF6C6", "fill-outline-color": "#F1C97E"}
+    },
+    {
+      "id": "cycleway",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "cycleway_a",
+      "minzoom": 16,
+      "paint": {
+        "fill-color": "#DF928E",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "gallery_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#e6e6e9", "fill-outline-color": "#d6d6db"}
+    },
+    {
+      "id": "retaining_wall",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "retaining_wall_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#e5dee3"}
+    },
+    {
+      "id": "sport",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "sport_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#F5F5F5"}
+    },
+    {
+      "id": "sport-calcio",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "sport_a",
+      "minzoom": 15,
+      "filter": ["all", ["==", "TIPO", "campo calcio"]],
+      "paint": {"fill-color": "#D0EFB1", "fill-antialias": false}
+    },
+    {
+      "id": "buildings",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#F5F5F5", "fill-outline-color": "#bababa"}
+    },
+    {
+      "id": "monument_a",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "monument_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#d1cbcb", "fill-outline-color": "#bfb6b6"}
+    },
+    {
+      "id": "pipeline",
+      "type": "fill",
+      "source": "torino",
+      "source-layer": "pipeline_a",
+      "minzoom": 15,
+      "paint": {"fill-color": "#cbcbd1", "fill-outline-color": "#b6b6bf"}
+    },
+    {
+      "id": "railways_l",
+      "type": "line",
+      "source": "torino",
+      "source-layer": "railways_l",
+      "filter": ["all",
+        ["==", "tunnel", "F"],
+        ["==", "fclass", "rail"]
+     ],
+      "paint": {
+        "line-color": "#bbbbc3",
+        "line-width": {"base": 1.4, "stops": [[14, 0.4], [15, 0.75], [20, 2]]}
+      }
+    },
+    {
+      "id": "railways_l_hatching",
+      "type": "line",
+      "source": "torino",
+      "source-layer": "railways_l",
+      "filter": ["all",
+        ["==", "tunnel", "F"],
+        ["==", "fclass", "rail"]
+      ],
+      "paint": {
+        "line-color": "#bbbbc3",
+        "line-dasharray": [0.2, 8],
+        "line-width": {"base": 1.4, "stops": [[14.5, 0], [15, 3], [20, 8]]}
+      }
+    },
+    {
+      "id": "subway_l",
+      "type": "line",
+      "source": "torino",
+      "source-layer": "railways_l",
+      "maxzoom": 15,
+      "filter": ["all",
+        ["==", "tunnel", "T"],
+        ["==", "fclass", "subway"]
+     ],
+      "paint": {
+        "line-color": "#E6211C",
+        "line-dasharray": [2, 4],
+        "line-width": 1.25
+      }
+    },
+    {
+      "id": "tram_l",
+      "type": "line",
+      "source": "torino",
+      "source-layer": "railways_l",
+      "minzoom": 18,
+      "filter": ["all",
+        ["==", "tunnel", "F"],
+        ["==", "fclass", "tram"]
+     ],
+      "paint": {
+        "line-color": "#bbbbc3",
+        "line-width": 0.5
+      }
+    },
+    {
+      "id": "tram_l_hatching",
+      "type": "line",
+      "source": "torino",
+      "source-layer": "railways_l",
+      "minzoom": 18,
+      "filter": ["all",
+        ["==", "tunnel", "F"],
+        ["==", "fclass", "tram"]
+     ],
+      "paint": {
+        "line-color": "#bbbbc3",
+        "line-dasharray": [1, 4],
+        "line-width": 2
+      }
+    },
+    {
+      "id": "tree",
+      "type": "circle",
+      "source": "torino",
+      "source-layer": "trees",
+      "minzoom": 16,
+      "filter": ["==", "status", "PIANTA"],
+      "paint": {
+        "circle-color": "#b3d89c",
+        "circle-opacity": 0.8,
+        "circle-radius": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          15, 0,
+          18, 8
+        ]
+      }
+    },
+    {
+      "id": "tree-empty",
+      "type": "circle",
+      "source": "torino",
+      "source-layer": "trees",
+      "minzoom": 16,
+      "filter": ["!=", "status", "PIANTA"],
+      "paint": {
+        "circle-color": "#ffffff",
+        "circle-stroke-color": "#b3d89c",
+        "circle-stroke-width": 1,
+        "circle-opacity": 0.8,
+        "circle-radius": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          15, 0,
+          18, 5
+        ]
+      }
+    },
+    {
+      "id": "building-extrusion",
+      "type": "fill-extrusion",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "filter": ["all", 
+        ["!=", "type", "educational"],
+        ["!=", "type", "healthcare"],
+        ["!=", "type", "industrial"],
+        ["!=", "type", "religious"],
+        ["!=", "type", "recreational"],
+        ["!=", "type", "services"],
+        ["!=", "type", "transportation"],
+        ["!=", "type", "university"]
+      ],
+      "paint": {
+        "fill-extrusion-color": "#E7E7E7",
+        "fill-extrusion-base": 0,
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+            15,
+            0,
+            15.05,
+            ["get", "height"]
+        ],
+        "fill-extrusion-opacity": 0.7
+      }
+    },
+    {
+      "id": "building-healthcare-extrusion",
+      "type": "fill-extrusion",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "filter": ["==", "type", "healthcare"],
+      "paint": {
+        "fill-extrusion-color": "#FFE6E5",
+        "fill-extrusion-base": 0,
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+            15,
+            0,
+            15.05,
+            ["get", "height"]
+        ],
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
+      "id": "building-religious-extrusion",
+      "type": "fill-extrusion",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "filter": ["in", "type", "recreational", "religious"],
+      "paint": {
+        "fill-extrusion-color": "#D1CBCB",
+        "fill-extrusion-base": 0,
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+            15,
+            0,
+            15.05,
+            ["get", "height"]
+        ],
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
+      "id": "building-services-extrusion",
+      "type": "fill-extrusion",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "filter": ["in", "type", "administrative", "services"],
+      "paint": {
+        "fill-extrusion-color": "#E2E2E5",
+        "fill-extrusion-base": 0,
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+            15,
+            0,
+            15.05,
+            ["get", "height"]
+        ],
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
+      "id": "building-transportation-extrusion",
+      "type": "fill-extrusion",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "filter": ["==", "type", "transportation"],
+      "paint": {
+        "fill-extrusion-color": "#d0cfe2",
+        "fill-extrusion-base": 0,
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+            15,
+            0,
+            15.05,
+            ["get", "height"]
+        ],
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
+      "id": "building-industrial-extrusion",
+      "type": "fill-extrusion",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "filter": ["==", "type", "industrial"],
+      "paint": {
+        "fill-extrusion-color": "#cfcfd4",
+        "fill-extrusion-base": 0,
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+            15,
+            0,
+            15.05,
+            ["get", "height"]
+        ],
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
+      "id": "building-university-extrusion",
+      "type": "fill-extrusion",
+      "source": "torino",
+      "source-layer": "building_a",
+      "minzoom": 15,
+      "filter": ["in", "type", "university", "educational"],
+      "paint": {
+        "fill-extrusion-color": "#E1D0DB",
+        "fill-extrusion-base": 0,
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+            15,
+            0,
+            15.05,
+            ["get", "height"]
+        ],
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
+      "id": "road_label",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "highway_l",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "layout": {
+        "text-field": "{TOPONIMO}",
+        "text-font": ["Metropolis Regular"],
+        "text-letter-spacing": 0.2,
+        "visibility": "visible",
+        "symbol-placement": "line",
+        "text-size": 12,
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": "#4E5166",
+        "text-halo-blur": 1,
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "river_label",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "fium_label",
+      "minzoom": 13,
+      "maxzoom": 18,
+      "layout": {
+        "text-field": "{nome}",
+        "text-font": ["Metropolis Regular"],
+        "text-letter-spacing": 0.2,
+        "visibility": "visible",
+        "symbol-placement": "line",
+        "text-size": 12,
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": "#027ACD",
+        "text-halo-blur": 1,
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "park_label",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "parchi_label",
+      "minzoom": 13,
+      "layout": {
+        "text-field": "{Name}",
+        "text-font": ["Metropolis Regular"],
+        "text-letter-spacing": 0.2,
+        "visibility": "visible",
+        "symbol-placement": "point",
+        "text-size": 12,
+        "symbol-spacing": 400
+      },
+      "paint": {
+        "text-color": "#158610",
+        "text-halo-blur": 1,
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "housenumber",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "housenumber",
+      "minzoom": 18,
+      "layout": {
+        "text-field": "{civico}",
+        "text-font": ["Metropolis Regular"],
+        "text-size": 10,
+        "visibility": "none"
+      },
+      "paint": {"text-color": "#77567A"}
+    },{
+      "id": "hospital",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "hospital",
+      "minzoom": 13,
+      "layout": {
+        "icon-image": "hospital_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 10,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "museum",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "museum",
+      "minzoom": 14,
+      "layout": {
+        "icon-image": "museum_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "poi",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "circle_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "cemetery",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "cemetery",
+      "minzoom": 13,
+      "layout": {
+        "icon-image": "cemetery_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "carabinieri",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "carabinieri",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "police_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "guardia_finanza",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "guardia_finanza",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "police_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "polizia_municipale",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "polizia_municipale",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "police_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "questura_commissariato",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "questura_commissariato",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "police_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "fire_dept",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "fire_dept",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "fire_station_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "school",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "school",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "school_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "university",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "university",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "college_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "theatre",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "theatre",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "theatre_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "cinema",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "cinema",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "cinema_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "embassy",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "embassy",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "embassy_11",
+        "text-anchor": "top",
+        "text-field": "Consolato {country}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "library",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "library",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "library_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },{
+      "id": "pharmacy",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "pharmacy",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "pharmacy_11"
+      }
+    },{
+      "id": "post_office",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "post_office",
+      "minzoom": 16,
+      "layout": {
+        "icon-image": "post_11"
+      }
+    },{
+      "id": "information",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "tourist",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "information_11"
+      }
+    },{
+      "id": "metro_station",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "metro_station",
+      "minzoom": 14,
+      "maxzoom": 17,
+      "layout": {
+        "icon-image": "rail_metro_11",
+        "text-anchor": "top",
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-padding": 2,
+        "text-size": 11,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#E6211C",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    
+    {
+      "id": "ex-quartieri",
+      "type": "symbol",
+      "source": "torino",
+      "source-layer": "ex_quartieri",
+      "minzoom": 13,
+      "maxzoom": 16,
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Metropolis Regular"],
+        "text-letter-spacing": 0.25,
+        "text-size": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          12, 10,
+          16.5, 24
+        ],
+        "text-transform": "uppercase",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#77567A",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 2
+      }
+    }
+  ]
+}
