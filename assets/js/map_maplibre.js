@@ -30,7 +30,7 @@ var map = new maplibregl.Map({
 map.addControl(new maplibregl.NavigationControl({visualizePitch: true}));
 map.addControl(new maplibregl.FullscreenControl());
 map.addControl(new maplibregl.GeolocateControl({positionOptions: {enableHighAccuracy: true},trackUserLocation: true}));
-map.addControl(new maplibregl.AttributionControl({customAttribution: 'Map produced by Ithaca S.r.l. | OpenStreetMap contributors | Geoportale comune di torino'}));
+map.addControl(new maplibregl.AttributionControl({customAttribution: 'Map produced by Ithaca S.r.l. | OpenStreetMap contributors | Dati Geoportale Comune di Torino'}));
 map.setMaxBounds([
     [7.6201961664197855, 45.036139036390324], //SO
     [7.73014527611393, 45.095305908712874] //NE
