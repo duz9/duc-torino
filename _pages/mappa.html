@@ -1,0 +1,140 @@
+---
+layout: default
+title: Web-gis
+permalink: mappa
+---
+
+<div id="myNav" class="overlay">
+    <!-- Button to close the overlay navigation -->
+     <a href="javascript:void(0)" class="closebtn" style="color: rgb(0, 0, 0); padding-top: 50%;" onclick="closeNav()">&times;</a>
+           
+    <!-- Overlay content -->
+     <div class="overlay-content">
+        <div class="container">
+            <h1 class="pb-5 text-dark">FILTRI</h1>
+<!--             <select class="form-select form-select-lg-outline-light w-75" style="color:rgb(255, 255, 255); background-color: transparent; cursor: pointer;" id="menu-drop1">
+                <option value="" style="color:rgb(0, 0, 0); font-weight: bold;">Tipologia</option>
+                <option value="Alimentari" style="color:rgb(0, 0, 0)">Alimentari</option>
+                <option value="Extralimentari" style="color:rgb(0, 0, 0)">Extralimentari</option>
+                <option value="Mista" style="color:rgb(0, 0, 0)">Mista</option>
+                <option value="Altro" style="color:rgb(0, 0, 0)">Altro</option>
+            </select> --> 
+            <div class="pt-4"></div>
+            <select class="form-select form-select-lg-outline-dark w-75" style="color:rgb(0, 0, 0); font-weight: bold; background-color: transparent; cursor: pointer;" id="menu-drop2">
+                <option value="" style="color:rgb(0, 0, 0); font-weight: bold;">Categoria</option>
+                <option value="Alimentari" style="color:rgb(0, 0, 0)">Alimentari</option>
+                <option value="Abbigliamento" style="color:rgb(0, 0, 0)">Abbigliamento</option>
+                <option value="Alimentari annessi ad altra attivitq" style="color:rgb(0, 0, 0)">Alimentari annessi ad altra attivitq</option>
+                <option value="Acconciatore/Estetista" style="color:rgb(0, 0, 0)">Acconciatore/Estetista</option>
+                <option value="Articoli pr la casa" style="color:rgb(0, 0, 0)">Articoli pr la casa</option>
+                <option value="Audiovisivi" style="color:rgb(0, 0, 0)">Audiovisivi</option>
+                <option value="Autoveicoli e motoveicoli" style="color:rgb(0, 0, 0)">Autoveicoli e motoveicoli</option>
+                <option value="Alimenti per animali" style="color:rgb(0, 0, 0)">Alimenti per animali</option>
+                <option value="Articoli sportivi" style="color:rgb(0, 0, 0)">Articoli sportivi</option>
+                <option value="Accessori abbigliamento" style="color:rgb(0, 0, 0)">Accessori abbigliamento</option>
+                <option value="Alimenti biologici" style="color:rgb(0, 0, 0)">Alimenti biologici</option>
+                <option value="Articoli per animali" style="color:rgb(0, 0, 0)">Articoli per animali</option>
+                <option value="Articoli sanitari e ortopedici" style="color:rgb(0, 0, 0)">Articoli sanitari e ortopedici</option>
+                <option value="Articoli funerari" style="color:rgb(0, 0, 0)">Articoli funerari</option>
+                <option value="Bibite" style="color:rgb(0, 0, 0)">Bibite</option>
+                <option value="Bigiotteria" style="color:rgb(0, 0, 0)">Bigiotteria</option>
+                <option value="Biciclette" style="color:rgb(0, 0, 0)">Biciclette</option>
+                <option value="Cialde caffl" style="color:rgb(0, 0, 0)">Cialde caffè</option>
+                <option value="Cartolerie" style="color:rgb(0, 0, 0)">Cartolerie</option>
+                <option value="Calzature" style="color:rgb(0, 0, 0)">Calzature</option>
+                <option value="Carburanti" style="color:rgb(0, 0, 0)">Carburanti</option>
+                <option value="Casalinghi - Igiene casa e persona" style="color:rgb(0, 0, 0)">Casalinghi - Igiene casa e persona</option>
+                <option value="Complementi d'arredo" style="color:rgb(0, 0, 0)">Complementi d'arredo</option>
+                <option value="Cosmetici" style="color:rgb(0, 0, 0)">Cosmetici</option>
+                <option value="Colorificio" style="color:rgb(0, 0, 0)">Colorificio</option>
+                <option value="Commercio equo e solidale" style="color:rgb(0, 0, 0)">Commercio equo e solidale</option>
+                <option value="Drogheria" style="color:rgb(0, 0, 0)">Drogheria</option>
+                <option value="Extralimentari" style="color:rgb(0, 0, 0)">Extralimentari</option>
+                <option value="Elettronica" style="color:rgb(0, 0, 0)">Elettronica</option>
+                <option value="Erboristeria" style="color:rgb(0, 0, 0)">Erboristeria</option>
+                <option value="Enoteca" style="color:rgb(0, 0, 0)">Enoteca</option>
+                <option value="Edilizia/Sanitari" style="color:rgb(0, 0, 0)">Edilizia/Sanitari</option>
+                <option value="Elettrodomestici e/o ricambi" style="color:rgb(0, 0, 0)">Elettrodomestici e/o ricambi</option>
+                <option value="Fotografia" style="color:rgb(0, 0, 0)">Fotografia</option>
+                <option value="Frutta e verdura" style="color:rgb(0, 0, 0)">Frutta e verdura</option>
+                <option value="Farmacia" style="color:rgb(0, 0, 0)">Farmacia</option>
+                <option value="Fiori e piante" style="color:rgb(0, 0, 0)">Fiori e piante</option>
+                <option value="Ferramenta" style="color:rgb(0, 0, 0)">Ferramenta</option>
+                <option value="Gastronomia" style="color:rgb(0, 0, 0)">Gastronomia</option>
+                <option value="Gelateria" style="color:rgb(0, 0, 0)">Gelateria</option>
+                <option value="Giocattoli" style="color:rgb(0, 0, 0)">Giocattoli</option>
+                <option value="Informatica" style="color:rgb(0, 0, 0)">Informatica</option>
+                <option value="Intimo" style="color:rgb(0, 0, 0)">Intimo</option>
+                <option value="Librerie" style="color:rgb(0, 0, 0)">Librerie</option>
+                <option value="Latteria" style="color:rgb(0, 0, 0)">Latteria</option>
+                <option value="Minimercato" style="color:rgb(0, 0, 0)">Minimercato</option>
+                <option value="Mobili" style="color:rgb(0, 0, 0)">Mobili</option>
+                <option value="Mista" style="color:rgb(0, 0, 0)">Mista</option>
+                <option value="Macelleria" style="color:rgb(0, 0, 0)">Macelleria</option>
+                <option value="Numismatica e filatelia" style="color:rgb(0, 0, 0)">Numismatica e filatelia</option>
+                <option value="Non alimentari annessi ad altre attivit0" style="color:rgb(0, 0, 0)">Non alimentari annessi ad altre attivit0</option>
+                <option value="Negozio con apparecchi automatici" style="color:rgb(0, 0, 0)">Negozio con apparecchi automatici</option>
+                <option value="Non alimentari generici" style="color:rgb(0, 0, 0)">Non alimentari generici</option>
+                <option value="Oggetti preziosi" style="color:rgb(0, 0, 0)">Oggetti preziosi</option>
+                <option value="Ottica" style="color:rgb(0, 0, 0)">Ottica</option>
+                <option value="Opere d'arte" style="color:rgb(0, 0, 0)">Opere d'arte</option>
+                <option value="Oggettistica" style="color:rgb(0, 0, 0)">Oggettistica</option>
+                <option value="Pastigliaggi" style="color:rgb(0, 0, 0)">Pastigliaggi</option>
+                <option value="Phone center" style="color:rgb(0, 0, 0)">Phone center</option>
+                <option value="Pizza al taglio" style="color:rgb(0, 0, 0)">Pizza al taglio</option>
+                <option value="Profumeria" style="color:rgb(0, 0, 0)">Profumeria</option>
+                <option value="Pasticceria" style="color:rgb(0, 0, 0)">Pasticceria</option>
+                <option value="Panetteria" style="color:rgb(0, 0, 0)">Panetteria</option>
+                <option value="Pelletteria" style="color:rgb(0, 0, 0)">Pelletteria</option>
+                <option value="Panificio" style="color:rgb(0, 0, 0)">Panificio</option>
+                <option value="Pescheria" style="color:rgb(0, 0, 0)">Pescheria</option>
+                <option value="Parafarmacia" style="color:rgb(0, 0, 0)">Parafarmacia</option>
+                <option value="Quotidiani e periodici" style="color:rgb(0, 0, 0)">Quotidiani e periodici</option>
+                <option value="Ricambi auto e accessori" style="color:rgb(0, 0, 0)">Ricambi auto e accessori</option>
+                <option value="Spaccio alimentare e non alimentare" style="color:rgb(0, 0, 0)">Spaccio alimentare e non alimentare</option>
+                <option value="Sexy shop" style="color:rgb(0, 0, 0)">Sexy shop</option>
+                <option value="Serramenti" style="color:rgb(0, 0, 0)">Serramenti</option>
+                <option value="Salumeria" style="color:rgb(0, 0, 0)">Salumeria</option>
+                <option value="Strumenti musicali" style="color:rgb(0, 0, 0)">Strumenti musicali</option>
+                <option value="Supermercato" style="color:rgb(0, 0, 0)">Supermercato</option>
+                <option value="Tabacchi" style="color:rgb(0, 0, 0)">Tabacchi</option>
+                <option value="Telefonia" style="color:rgb(0, 0, 0)">Telefonia</option>
+                <option value="Tessuti" style="color:rgb(0, 0, 0)">Tessuti</option>
+                <option value="Tappeti" style="color:rgb(0, 0, 0)">Tappeti</option>
+                <option value="Vendita al dettaglio di cose antiche ed usate" style="color:rgb(0, 0, 0)">Vendita al dettaglio di cose antiche ed usate</option>
+                <option value="Vendita non esclusiva di giornali" style="color:rgb(0, 0, 0)">Vendita non esclusiva di giornali</option>
+                <option value="Nessuna" style="color:rgb(0, 0, 0)">Altro</option>
+            </select>
+            <div class="pt-4"></div>
+            <select class="form-select form-select-lg-outline-dark w-75" style="color:rgb(0, 0, 0); font-weight: bold; background-color: transparent; cursor: pointer;" id="menu-drop3">
+                <option value="" style="color:rgb(0, 0, 0); font-weight: bold;">Sub-ambito</option>
+                <option value="Cultura" style="color:rgb(0, 0, 0)">1 - Cultura</option>
+                <option value="Shopping" style="color:rgb(0, 0, 0)">2 - Shopping</option>
+                <option value="Porta palazzo" style="color:rgb(0, 0, 0)">3 - Porta palazzo</option>
+                <option value="Balon" style="color:rgb(0, 0, 0)">4 - Balon</option>
+                <option value="Piazza Vittorio, fiume, murazzi" style="color:rgb(0, 0, 0)">5 - Piazza Vittorio, fiume, murazzi</option>
+                <option value="Porta Nuova, Sacchi e Nizza" style="color:rgb(0, 0, 0)">6 - Porta Nuova, Sacchi e Nizza</option>
+                <option value="Porta Susa" style="color:rgb(0, 0, 0)">7 - Porta Susa</option>
+                <option value="Garibaldi, Statuto, Curia maxima, Quartieri Juvarriani, Quadrilatero romano" style="color:rgb(0, 0, 0)">8 - Quadrilatero romano, Garibaldi, Statuto, Curia Maxima e Quartieri Militari</option>
+            </select> 
+            <div class="container pb-5 pt-4">
+<!--                 <p style="color: aliceblue;">Anno di inizio:</p>
+                <Input class="range" type="range" id="barra" min="1966" max="2023"></Input>
+                <span id="valore" style="color: aliceblue;">Seleziona l'anno di costruzione</span> -->
+            </div>
+            <button type="button" class="btn bt btn-outline-dark w-auto" style="color: #000000; font-weight: bold;" id="reset">Reset filter</button>
+        </div>
+     </div>
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<div class="header">
+<div class="map_container" id="map"></div>
+<div class="mycontainer">
+    <div onclick="openNav()">
+        <div class="icona"></div>
+        <div class="icona"></div>
+        <div class="icona"></div>
+    </div>
+</div> 
+</div>
