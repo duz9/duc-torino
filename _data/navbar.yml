@@ -4,5 +4,9 @@
   link: /chi-siamo
 - name: Aree
   link: /aree
+- name: News
+  link: /news
+- name: Mappa
+  link: /mappa
 - name: Piano Strategico
   link: /#piano-strategico
