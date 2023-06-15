@@ -678,7 +678,7 @@
         "text-field": "{civico}",
         "text-font": ["Metropolis Regular"],
         "text-size": 10,
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": {"text-color": "#77567A"}
     },{
