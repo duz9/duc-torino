@@ -1,12 +1,12 @@
 - name: Home
-  link: /
+  link: ./index.html
 - name: Chi siamo
-  link: /chi-siamo
+  link: ./chi-siamo.html
 - name: Aree
-  link: /aree
+  link: ./aree.html
 - name: News
-  link: /news
+  link: ./news.html
+- name: Progetti
+  link: ./progetti.html
 - name: Mappa
-  link: /mappa
-- name: Piano Strategico
-  link: /#piano-strategico
+  link: ./mappa.html

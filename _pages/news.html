@@ -7,36 +7,69 @@ permalink: news
     <h1><b>NEWS</b></h1>
 
 
-    <div class="accordion" id="accordionExample">
+    <div class="accordion py-2" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             Filtra news
           </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body">
 
-<!--             <div class="container mx-5 my-5">
-            <div class="range-slider">
-              <span id="rs-bullet_year" class="rs-label">2023</span>
-              <input id="rs-range-line_year" class="rs-range" type="range" value="" min="1990" max="2023">
+            <div class="container pb- pt-4">
+              <div class="container">
+              <div class="row">
+                <div class="col"><p style="color: rgb(0, 136, 255);">Anno:</p></div>
+                <div class="col-2"><span id="valore_news_anno" style="color: rgb(0, 136, 255);">Seleziona l'anno</span></div>
+                <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div>
+                <div class="col-8"></div>
+              </div>
             </div>
-            <div class="range-slider">
-              <span id="rs-bullet_month" class="rs-label">Gennaio</span>
-              <input id="rs-range-line_month" class="rs-range" type="range" value="" min="1" max="12">
-            </div>
-            </div> -->
-
-            <div class="container pb-5 pt-4">
-              <p style="color: rgb(0, 136, 255);">Anno:</p>
               <Input class="range_news" type="range" id="barra_news_anno" min="1990" max="2023"></Input>
-              <span id="valore_news_anno" style="color: rgb(0, 136, 255);">Seleziona l'anno</span>
           </div>
-          <div class="container pb-5 pt-1">
-            <p style="color: rgb(0, 136, 255);">Mese:</p>
+          <div class="container pb-4 pt-1">
+            <div class="container">
+              <div class="row">
+                <div class="col"><p style="color: rgb(0, 136, 255);">Mese:</p></div>
+                <div class="col-2"><span id="valore_news_mese" style="color: rgb(0, 136, 255);">Seleziona il mese</span></div>
+                <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div>
+                <div class="col-8"></div>
+              </div>
+            </div>
             <Input class="range_news" type="range" id="barra_news_mese" min="1" max="12"></Input>
-            <span id="valore_news_mese" style="color: rgb(0, 136, 255);">Seleziona il mese</span>
+          </div>
+
+          <div class="container">
+          <div class="btn-group dropend mb-4">
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">
+              Tipologia
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" style="color: #0063ed;" value="Bando" onclick="filter_by_tag('Bando')">Bando</a></li>
+              <li><a class="dropdown-item" href="#" style="color: #0063ed;" value="Comunicazione istituzionale" onclick="filter_by_tag('Comunicazione istituzionale')">Comunicazione istituzionale</a></li>
+              <li><a class="dropdown-item" href="#" style="color: #0063ed;" value="Evento" onclick="filter_by_tag('Evento')">Evento</a></li>
+              <li><a class="dropdown-item" href="#" style="color: #0063ed;" value="Imprese" onclick="filter_by_tag('Imprese')">Imprese</a></li>
+              <li><a class="dropdown-item" href="#" style="color: #0063ed;" value="Mercati" onclick="filter_by_tag('Mercati')">Mercati</a></li>
+              <li><a class="dropdown-item" href="#" style="color: #0063ed;" value="Progetto" onclick="filter_by_tag('Progetto')">Progetto</a></li>
+            </ul>
+          </div>
+        </div>
+
+          <div class="container">
+          <div class="input-group flex-nowrap pb-4">
+            <input type="text" class="form-control" id="myInput" onkeyup="news_filter()" placeholder="Cerca per nome" style="border: 1px solid #0063ed;">
+          </div>
+        </div>
+
+          <div class="container text-center">
+            <div class="row">
+              <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col">
+                <div class="container ms-5">
+                <button type="button" class="btn btn-outline-primary" onclick="ripristina_filtri_news()">Rimuovere filtri</button>
+              </div>
+              </div>
+            </div>
           </div>
 
           </div>
@@ -45,40 +78,53 @@ permalink: news
     </div>
 
 
+    <!-- <div class="row row-cols-1 row-cols-md-2 g-4 py-4"> -->
 
-    <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
 
-      {% for post in site.posts %}
+    {% for post in site.posts %}
       
-    <div class="col">
-
-    <div class="card">
-      <div class="card-body">
+    <li class="card" id="my_news">
+       <div class="card-body" style="background-color: rgba(176, 200, 252, 0.149);">
           <div class="post-header">
-              <time class="post-date" style="color:rgba(149, 148, 116, 0.99)" id= "orario" datetime="{{ post.date | date: "%d %m %Y" }}">{{post.date | date: "%d-%m-%Y" }}</time>
-              <h2 class="post-title"><!-- <a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{post.title}}</a> -->{{post.title}}</h2>
+              <time class="post-date" style="color:rgba(149, 148, 116, 0.99)" id= "orario" datetime="{{ post.date | date: "%m-%d-%Y" }}">{{post.date | date: "%d/%m/%Y" }}</time>
+              <h2 class="post-title"><!-- <a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{post.title}}</a> --><b>{{post.title}}</b></h2>
               <div class="post-meta">
-                By <span class="post-author">{{ site.data.author.name }}</span>{% if post.tags.size > 0 %}<span
-                  class="post-tags"> in
-                  {% for tag in post.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}
+                <span class="post-tags" id="{% increment 0 %}">
+                  {% for tag in post.tags %}<span onclick="filter_by_tag('{{tag}}')" class="news_tag"><a href="#" rel="tag">{{ tag }}</a></span>{% unless forloop.last %}, {% endunless %}{% endfor %}
+                </span>
               </div><!-- .post-meta -->
-            </div><!-- .post-header -->
-      <img src="{{ post.feature_image | relative_url }}" class="card-img-top" alt="...">
-      <div class="post-content pt-2">
-          {% if post.content contains '<!--more-->' %}
-          {{ post.content | split:'<!--more-->' | first }}
-          <p class="read-more"><a href="{{ site.baseurl }}{{ post.url }}" class="read-more-link">Continua a leggere &rarr;</a>
-          </p>
-          {% else %}
-          {{ post.content }}
-          {% endif %}
-      </div><!-- .post-content -->
+          </div><!-- .post-header -->
+          <div class=" text-center container-fluid w-auto" style="background:url({{ post.feature_image | relative_url }});">
+            <div class="row py-1"></div>
+            <div class="row py-5">
+              <div class="col-8 mx-auto">
+                <div class="container my-5" style="background-color: rgb(255, 255, 255); opacity: 90%;">
+                <p class=" mytext h4 py-2 text-dark"><b>{{post.description}}</b></p>
+              </div>
+              </div>
+            </div>
+            <div class="row py-4"></div>
+          </div>
+          <div class="container text-center mt-4 pb-2">
+            <a type="button" class="btn btn-primary" href="assets/docs/{{post.pdf}}">Leggi</a>
+            <a type="button" class="btn btn-outline-primary" href="assets/docs/{{post.pdf}}" download="assets/docs/{{post.pdf}}">Scarica</a>
+          </div>
+          <div class="post-content pt-2">
+            {% if post.content.size > 200 %}
+            {{ post.content | truncatewords: 100 }}
+              <p class="read-more"><a href="{{ post.url }}" class="read-more-link">Continua a leggere &rarr;</a>
+              </p>
+              {% else %}
+              {{ post.content }}
+              {% endif %}
+          </div>    
+          <!-- .post-content -->
       </div>
-    </div>
+    </li> 
+    <hr>   
+ 
 
-      </div>
-
-      {% endfor %}
-    </div>
+  {% endfor %}
+  <!-- </div> -->
 
 </div> 
