@@ -1,6 +1,7 @@
 ---
 ---
 @import 'bootstrap/bootstrap';
+
 @font-face {
     font-family: 'Clear Sans';
     src: url('../fonts/clearsans-light-webfont.woff2') format('woff2'),
@@ -87,7 +88,7 @@ body {
   width: 100%;
   height: 100%;
   -webkit-appearance: none;
-  background: #f3e84d;
+  background: #fcfcfc;
   outline: none;
   border-radius: 15px;
   overflow: hidden;
@@ -102,4 +103,18 @@ body {
   cursor: pointer;
   border: 4px solid #333;
   box-shadow: -1009px 0 0 1000px #0063ed;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 630px) {
+  .mytext {
+    font-size: 1.5vw;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 629px) {
+  .mytext {
+    font-size: 4vw;
+  }
 }
