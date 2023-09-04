@@ -6,44 +6,27 @@ layout: default
 
   <article class="post">
     <header class="post-header">
-      <div class="post-header">
-        <time class="post-date" style="color:rgba(149, 148, 116, 0.99)" id= "orario" datetime="{{ post.date | date: "%d %m %Y" }}">{{page.date | date: "%d/%m/%Y" }}</time>
-        <h2 class="post-title"><!-- <a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{post.title}}</a> --><b>{{page.title}}</b></h2>
-        <div class="post-meta">
-          <span class="post-tags" id="{% increment i %}">
-            {% for tag in page.tags %}<span onclick="filter_by_tag('{{tag}}')" class="news_tag"><a href="#" rel="tag">{{ tag }}</a></span>{% unless forloop.last %}, {% endunless %}{% endfor %}
-          </span>
-        </div><!-- .post-meta -->
-    </div><!-- .post-header -->
-    <div class=" text-center container-fluid w-auto" style="background:url({{ page.feature_image | relative_url }});">
-      <div class="row py-1"></div>
-      <div class="row py-5">
-        <div class="col-8 mx-auto">
-          <div class="container my-5" style="background-color: rgb(255, 255, 255); opacity: 90%;">
-          <h4 class="py-3 text-dark"><b>{{page.description}}</b></h4>
-        </div>
-        </div>
-      </div>
-      <div class="row py-5"></div>
-    </div>
+      <time class="post-date" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{page.date | date: "%B %-d, %Y" }}</time>
+      <h1 class="post-title">{{page.title}}</h1>
+      <div class="post-meta">
+        By <span class="post-author">{{ site.data.author.name }}</span>{% if page.tags.size > 0 %}<span class="post-tags"> in {% for tag in page.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}
+      </div><!-- .post-meta -->
+      {% if page.feature_image and page.feature_image != "" %}
+      <figure class="post-thumbnail image-card width-wide">
+        <img src="{{ page.feature_image | relative_url }}" alt="{{ page.title }}">
+      </figure><!-- .post-thumbnail -->
+      {% endif %}
     </header><!-- .post-header -->
-    <div class="post-content pt-5">
-    {% if page.allegati!=nil %}
-    <div class="container text-center pb-4">
-      {% for i in page.allegati %}
-      <a type="button" class="btn btn-primary mb-1" href="{{ post.url }}/assets/docs/{{i}}.pdf">{{i}}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
+    <div class="post-content">
       {{content}}
     </div><!-- .post-content -->
-    <!-- <div class="post-share">
+    <div class="post-share">
       <span>Share:</span>
       <a target="_blank"
         href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&amp;url={{ page.url | absolute_url }}" rel="noopener">Twitter</a>
       <a target="_blank"
         href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}&amp;t={{ page.title | uri_escape }}" rel="noopener">Facebook</a>
-    </div> --><!-- .share-post -->
+    </div><!-- .share-post -->
 <!--     <div class="author-box">
       {% if site.data.author.image and site.data.author.image != "" %}
       <div class="author-avatar" style="background-image: url('{{ site.data.author.image }}')"><span class="screen-reader-text">{{ site.data.author.name }}'s Picture</span></div>
